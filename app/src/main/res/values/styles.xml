@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Clean minimal input matching the reference UI -->
+    <style name="InputFieldStyle"
+        parent="Widget.Material3.TextInputLayout.OutlinedBox">
+
+        <!-- Box background -->
+        <item name="boxBackgroundColor">@color/input_bg</item>
+
+        <!-- Border colors for each state -->
+        <item name="boxStrokeColor">@color/input_border</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1.5dp</item>
+
+        <!-- Rounded corners -->
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+
+        <!-- Hint text color -->
+        <item name="hintTextColor">@color/text_hint</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+
+    </style>
+</resources>

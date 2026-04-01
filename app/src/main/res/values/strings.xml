@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Door Control</string>
+
+    <!-- General Auth Strings -->
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="name_hint">Full Name</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    
+    <!-- Login Screen -->
+    <string name="title_login">Welcome Back</string>
+    <string name="subtitle_login">Sign in to continue to Door Control</string>
+    <string name="btn_login">Log In</string>
+    <string name="forgot_password_link">Forgot Password?</string>
+    <string name="no_account_prompt">Don\'t have an account? <b>Register</b></string>
+
+    <!-- Register Screen -->
+    <string name="title_register">Create Account</string>
+    <string name="subtitle_register">Sign up to get started</string>
+    <string name="btn_register">Sign Up</string>
+    <string name="has_account_prompt">Already have an account? <b>Log In</b></string>
+
+    <!-- Forgot Password Screen -->
+    <string name="title_forgot_password">Reset Password</string>
+    <string name="desc_forgot_password">Enter the email associated with your account and we\'ll send an email with instructions to reset your password.</string>
+    <string name="btn_send_reset">Send Reset Link</string>
+</resources>
