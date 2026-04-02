@@ -18,10 +18,11 @@
             android:id="@+id/btnBack"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_marginTop="16dp"
             android:src="@drawable/ic_arrow_back"
             android:background="@drawable/bg_back_btn"
-            android:tint="@color/text_primary"
-            android:contentDescription="Back" />
+            android:contentDescription="Back"
+            app:tint="@color/text_primary" />
 
         <Space android:layout_height="32dp"
             android:layout_width="match_parent"/>
