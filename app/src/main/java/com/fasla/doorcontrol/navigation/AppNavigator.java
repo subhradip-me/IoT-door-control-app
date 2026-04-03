@@ -6,17 +6,22 @@ import android.content.Intent;
 import com.fasla.doorcontrol.features.auth.presentation.ui.ForgotPasswordActivity;
 import com.fasla.doorcontrol.features.auth.presentation.ui.LoginActivity;
 import com.fasla.doorcontrol.features.auth.presentation.ui.RegisterActivity;
+import com.fasla.doorcontrol.features.bluetooth.presentation.ui.BluetoothActivity;
 import com.fasla.doorcontrol.features.home.presentation.ui.HomeActivity;
 
 /**
- * AppNavigator — centralized navigation helper.
- *
- * Use these static methods instead of scattering raw Intent calls around the app.
- * Add new destinations here as each feature screen is built.
+ * AppNavigator — single source of truth for all screen transitions.
  */
 public final class AppNavigator {
 
     private AppNavigator() { /* no instances */ }
+
+    /** Navigate to HomeActivity, clearing the back stack. */
+    public static void goToHome(Context context) {
+        Intent intent = new Intent(context, HomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        context.startActivity(intent);
+    }
 
     /** Navigate to LoginActivity, clearing the back stack. */
     public static void goToLogin(Context context) {
@@ -35,11 +40,8 @@ public final class AppNavigator {
         context.startActivity(new Intent(context, ForgotPasswordActivity.class));
     }
 
-    /** Navigate to HomeActivity, clearing the back stack (post-login). */
-    public static void goToHome(Context context) {
-        // TODO: Uncomment when HomeActivity layout is ready
-        // Intent intent = new Intent(context, HomeActivity.class);
-        // intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        // context.startActivity(intent);
+    /** Navigate to BluetoothActivity. */
+    public static void goToBluetooth(Context context) {
+        context.startActivity(new Intent(context, BluetoothActivity.class));
     }
 }

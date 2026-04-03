@@ -9,4 +9,22 @@
     <color name="input_border">#E8E8E8</color>
     <color name="divider">#EEEEEE</color>
     <color name="google_border">#E0E0E0</color>
+
+    <!-- Door status -->
+    <color name="status_open">#16A34A</color>
+    <color name="status_open_bg">#F0FDF4</color>
+    <color name="status_open_stroke">#BBF7D0</color>
+    <color name="status_locked">#1A1A1A</color>
+    <color name="status_locked_bg">#F9F9F9</color>
+    <color name="status_unknown_bg">#F9F9F9</color>
+
+    <!-- BT connection states -->
+    <color name="bt_connected">#16A34A</color>
+    <color name="bt_scanning">#D97706</color>
+    <color name="bt_connecting">#2563EB</color>
+    <color name="bt_error">#DC2626</color>
+    <color name="bt_disconnected">#9CA3AF</color>
+
+    <!-- Card surface -->
+    <color name="surface_card">#FAFAFA</color>
 </resources>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:paddingTop="24dp">
+
+    <!-- ── Header / Toolbar ───────────────────────────────────────────── -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:paddingTop="24dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow_back"
+            android:background="@drawable/bg_back_btn"
+            android:contentDescription="Back"
+            app:tint="@color/text_primary" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bluetooth"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+        </LinearLayout>
+
+        <!-- Scan button top-right -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnScan"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="Scan"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/black"
+            app:cornerRadius="20dp"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp" />
+
+    </RelativeLayout>
+
+    <!-- ── State Banner ───────────────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/layoutStateBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/surface_card"
+        android:visibility="visible">
+
+        <View
+            android:id="@+id/viewBannerDot"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/bg_status_dot"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/tvBannerStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Not connected"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary" />
+
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider" />
+
+    <!-- ── Section Label ──────────────────────────────────────────────── -->
+    <TextView
+        android:id="@+id/tvSectionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PAIRED DEVICES"
+        android:textSize="11sp"
+        android:textColor="@color/text_hint"
+        android:textAllCaps="true"
+        android:letterSpacing="0.12"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp" />
+
+    <!-- ── Device List ─────────────────────────────────────────────────── -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDevices"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false" />
+
+    <!-- ── Empty State ────────────────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/layoutEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="40dp">
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_bluetooth"
+            android:contentDescription="No devices"
+            app:tint="@color/text_hint" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No devices found"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap Scan above to search for nearby Bluetooth devices"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp" />
+
+    </LinearLayout>
+
+    <!-- ── Bottom Divider + Disconnect ───────────────────────────────── -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDisconnect"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="20dp"
+        android:text="Disconnect"
+        android:textSize="15sp"
+        android:textColor="@color/text_primary"
+        android:visibility="gone"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        app:strokeColor="@color/input_border"
+        app:strokeWidth="1.5dp"
+        app:cornerRadius="14dp"
+        app:rippleColor="#11000000" />
+
+</LinearLayout>

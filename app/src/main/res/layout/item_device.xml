@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="16dp"
+    android:paddingTop="24dp"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- BT Icon -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/surface_card"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/input_border">
+
+        <ImageView
+            android:id="@+id/ivDeviceIcon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_bluetooth"
+            android:contentDescription="Device"
+            app:tint="@color/text_primary" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Info -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="14dp">
+
+        <TextView
+            android:id="@+id/tvDeviceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device Name"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:singleLine="true"
+            android:ellipsize="end" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:id="@+id/tvDeviceAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AA:BB:CC:DD:EE:FF"
+                android:textSize="12sp"
+                android:textColor="@color/text_hint"
+                android:fontFamily="monospace" />
+
+            <!-- Paired badge -->
+            <TextView
+                android:id="@+id/tvPairedBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" · Paired"
+                android:textSize="12sp"
+                android:textColor="@color/bt_connected"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Arrow -->
+    <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:src="@drawable/ic_chevron_right"
+        android:contentDescription="Connect" />
+
+</LinearLayout>

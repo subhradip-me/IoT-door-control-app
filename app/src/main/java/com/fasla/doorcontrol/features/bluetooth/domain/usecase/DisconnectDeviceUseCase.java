@@ -1,6 +1,20 @@
 package com.fasla.doorcontrol.features.bluetooth.domain.usecase;
 
-/** DisconnectDeviceUseCase — cleanly closes the active Bluetooth connection. */
+import com.fasla.doorcontrol.features.bluetooth.domain.repository.BluetoothRepository;
+
+/**
+ * DisconnectDeviceUseCase — cleanly closes the active Bluetooth connection
+ * and releases underlying socket resources.
+ */
 public class DisconnectDeviceUseCase {
-    // TODO: Inject BluetoothRepository and implement execute()
+
+    private final BluetoothRepository repository;
+
+    public DisconnectDeviceUseCase(BluetoothRepository repository) {
+        this.repository = repository;
+    }
+
+    public void execute() {
+        repository.disconnect();
+    }
 }
