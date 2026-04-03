@@ -1,16 +1,15 @@
-package com.fasla.doorcontrol;
+package com.fasla.doorcontrol.features.auth.presentation.ui;
 
 import android.os.Bundle;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.fasla.doorcontrol.R;
+import com.fasla.doorcontrol.core.base.BaseActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class ForgotPasswordActivity extends AppCompatActivity {
+public class ForgotPasswordActivity extends BaseActivity {
 
     private TextInputLayout tilEmail;
     private TextInputEditText etEmail;
@@ -27,13 +26,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         btnReset = findViewById(R.id.btnReset);
         btnBack  = findViewById(R.id.btnBack);
 
-        if (btnBack != null) {
-            btnBack.setOnClickListener(v -> finish());
-        }
-
-        if (btnReset != null) {
-            btnReset.setOnClickListener(v -> handleReset());
-        }
+        if (btnBack != null)  btnBack.setOnClickListener(v -> finish());
+        if (btnReset != null) btnReset.setOnClickListener(v -> handleReset());
     }
 
     private void handleReset() {
@@ -46,8 +40,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             tilEmail.setError(null);
         }
 
-        // TODO: Implement actual reset logic API Call
-        Toast.makeText(this, "Reset Link Sent to " + email, Toast.LENGTH_SHORT).show();
-        finish(); // pop back out of stack cleanly
+        // TODO: Replace with real reset via AuthViewModel -> AuthRepository
+        showToast("Reset Link Sent to " + email);
+        finish();
     }
 }

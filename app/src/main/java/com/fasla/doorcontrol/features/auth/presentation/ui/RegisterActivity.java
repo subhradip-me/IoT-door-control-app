@@ -1,17 +1,16 @@
-package com.fasla.doorcontrol;
+package com.fasla.doorcontrol.features.auth.presentation.ui;
 
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.fasla.doorcontrol.R;
+import com.fasla.doorcontrol.core.base.BaseActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends BaseActivity {
 
     private TextInputLayout tilName, tilEmail, tilPassword, tilConfirmPassword;
     private TextInputEditText etName, etEmail, etPassword, etConfirmPassword;
@@ -41,17 +40,12 @@ public class RegisterActivity extends AppCompatActivity {
         btnBack            = findViewById(R.id.btnBack);
 
         // Event Listeners
-        if (btnBack != null) {
-            btnBack.setOnClickListener(v -> finish());
-        }
-
-        if (tvLogin != null) {
-            tvLogin.setOnClickListener(v -> finish());
-        }
+        if (btnBack != null)    btnBack.setOnClickListener(v -> finish());
+        if (tvLogin != null)    tvLogin.setOnClickListener(v -> finish());
 
         if (btnGoogle != null) {
-            btnGoogle.setOnClickListener(v -> 
-                Toast.makeText(this, "Google Sign-Up Clicked", Toast.LENGTH_SHORT).show()
+            btnGoogle.setOnClickListener(v ->
+                showToast("Google Sign-Up coming soon!")
             );
         }
 
@@ -61,9 +55,9 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void handleRegistration() {
-        String name     = etName.getText() != null ? etName.getText().toString().trim() : "";
-        String email    = etEmail.getText() != null ? etEmail.getText().toString().trim() : "";
-        String password = etPassword.getText() != null ? etPassword.getText().toString().trim() : "";
+        String name        = etName.getText() != null ? etName.getText().toString().trim() : "";
+        String email       = etEmail.getText() != null ? etEmail.getText().toString().trim() : "";
+        String password    = etPassword.getText() != null ? etPassword.getText().toString().trim() : "";
         String confirmPass = etConfirmPassword.getText() != null ? etConfirmPassword.getText().toString().trim() : "";
 
         boolean valid = true;
@@ -90,7 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (!valid) return;
 
-        // TODO: Implement actual registration API
-        Toast.makeText(this, "Simulating Registration for " + email, Toast.LENGTH_SHORT).show();
+        // TODO: Replace with real registration via AuthViewModel -> RegisterUseCase -> AuthRepository
+        showToast("Simulating Registration for " + email);
     }
 }

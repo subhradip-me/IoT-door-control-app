@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DoorControl">
+
+        <!-- Entry Point -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -19,9 +21,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
+
+        <!-- Auth Feature -->
+        <activity android:name=".features.auth.presentation.ui.LoginActivity" />
+        <activity android:name=".features.auth.presentation.ui.RegisterActivity" />
+        <activity android:name=".features.auth.presentation.ui.ForgotPasswordActivity" />
+
+        <!-- Home Feature -->
+        <activity android:name=".features.home.presentation.ui.HomeActivity" />
+
+        <!-- Settings Feature -->
+        <activity android:name=".features.settings.presentation.ui.SettingsActivity" />
+
     </application>
 
 </manifest>

@@ -1,16 +1,17 @@
-package com.fasla.doorcontrol;
+package com.fasla.doorcontrol.features.auth.presentation.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+
+import com.fasla.doorcontrol.R;
+import com.fasla.doorcontrol.core.base.BaseActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     private TextInputLayout tilEmail, tilPassword;
     private TextInputEditText etEmail, etPassword;
@@ -46,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         );
 
         btnGoogle.setOnClickListener(v ->
-                Toast.makeText(this, "Google Sign In coming soon!", Toast.LENGTH_SHORT).show()
+                showToast("Google Sign In coming soon!")
         );
 
         btnLogin.setOnClickListener(v -> handleLogin());
@@ -74,10 +75,10 @@ public class LoginActivity extends AppCompatActivity {
 
         if (!valid) return;
 
-        // TODO: Replace with real auth
+        // TODO: Replace with real auth via AuthViewModel -> LoginUseCase -> AuthRepository
         if (email.equals("admin") && password.equals("admin123")) {
-            Toast.makeText(this, "Login Successful! Welcome Admin", Toast.LENGTH_SHORT).show();
-            // TODO: Navigate to Home/Dashboard Activity
+            showToast("Login Successful! Welcome Admin");
+            // TODO: AppNavigator.goToHome(this);
         } else {
             tilPassword.setError("Wrong credentials");
             etPassword.getText().clear();
