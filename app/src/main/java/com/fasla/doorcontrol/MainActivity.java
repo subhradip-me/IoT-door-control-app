@@ -7,8 +7,8 @@ import com.fasla.doorcontrol.navigation.AppNavigator;
 /**
  * MainActivity — app entry point.
  *
- * AUTH BYPASS (dev mode): redirects directly to HomeActivity.
- * To re-enable auth: replace goToHome() with goToLogin().
+ * Directs the user to the Login screen. After successful authentication,
+ * LoginActivity will navigate to HomeActivity.
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -16,12 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // ── DEV MODE: Skip auth, go straight to Home ──────────────────────
-        AppNavigator.goToHome(this);
+        // ── AUTH FLOW: Navigate to Login, clear back stack ─────────────────
+        AppNavigator.goToLogin(this);
         finish(); // Remove MainActivity from the back stack
-
-        // ── PRODUCTION: Uncomment to restore auth flow ────────────────────
-        // AppNavigator.goToLogin(this);
-        // finish();
     }
 }
